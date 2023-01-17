@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
         maven 'my-maven'
-        terraform 'tf'
+        terraform 'terraform'
     }
     environment {
         IMAGE_NAME = "techtordocker/java-app-tf:java-maven-${BUILD_NUMBER}"

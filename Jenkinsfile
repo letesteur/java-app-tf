@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
         maven 'my-maven'
-        terraform 'tf'
+        terraform 'terraform'
     }
     environment {
         IMAGE_NAME = "techtordocker/java-app-tf:java-maven-${BUILD_NUMBER}"
@@ -85,7 +85,7 @@ pipeline {
         }
     }
     post { 
-        FAILURE { 
+        success { 
             sh "cd Terraform && terraform destroy --auto-approve"
         }
     }
